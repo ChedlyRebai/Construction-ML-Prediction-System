@@ -80,6 +80,25 @@ npm install
 npm run dev
 ```
 
+## Free Internet Deployment
+
+The repo already includes a `render.yaml` file for Render.
+
+Backend deploy steps on Render:
+
+1. Create a free Render account.
+2. Push this repository to GitHub.
+3. In Render, choose "New +" then "Blueprint".
+4. Select the GitHub repo that contains this project.
+5. Render will read `render.yaml` and create the services.
+6. Use the URL of the `building-ml-api` service as your public backend URL.
+
+Important notes:
+
+- The backend now starts with `gunicorn` and binds to `$PORT`, which is required on Render.
+- Free Render web services can sleep when idle, so the first request after inactivity may be slower.
+- The frontend in this repo is separate. If you only want the backend online, deploy just the API service.
+
 ## Notes
 
 - The model files are stored in `backend/artifacts/`.

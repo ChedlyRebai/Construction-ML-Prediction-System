@@ -141,7 +141,6 @@ function App() {
         </p>
       </section>
 
-
       <section className="panel">
         <form className="prediction-form" onSubmit={handleSubmit}>
           <div className="grid-section">
