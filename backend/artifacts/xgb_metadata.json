@@ -1,0 +1,54 @@
+{
+  "classes": [
+    "Excellent",
+    "Fair",
+    "Good",
+    "Poor"
+  ],
+  "feature_columns": [
+    "temperature",
+    "humidity",
+    "vibration_level",
+    "material_usage",
+    "machinery_status",
+    "worker_count",
+    "energy_consumption",
+    "task_progress",
+    "cost_deviation",
+    "time_deviation",
+    "safety_incidents",
+    "equipment_utilization_rate",
+    "material_shortage_alert",
+    "risk_score",
+    "simulation_deviation",
+    "update_frequency",
+    "optimization_suggestion_Increase Machinery",
+    "optimization_suggestion_Optimize Material Usage",
+    "optimization_suggestion_Reallocate Workers"
+  ],
+  "required_fields": [
+    "temperature",
+    "humidity",
+    "vibration_level",
+    "material_usage",
+    "machinery_status",
+    "worker_count",
+    "energy_consumption",
+    "task_progress",
+    "cost_deviation",
+    "time_deviation",
+    "safety_incidents",
+    "equipment_utilization_rate",
+    "material_shortage_alert",
+    "risk_score",
+    "simulation_deviation",
+    "update_frequency",
+    "optimization_suggestion"
+  ],
+  "ignored_columns": [
+    "timestamp",
+    "project_health"
+  ],
+  "categorical_column": "optimization_suggestion",
+  "target_column": "performance_score"
+}
