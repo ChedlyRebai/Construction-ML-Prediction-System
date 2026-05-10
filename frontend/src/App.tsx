@@ -3,8 +3,10 @@ import AboutPage from './pages/AboutPage';
 import DatasetDetailPage from './pages/DatasetDetailPage';
 import DatasetsPage from './pages/DatasetsPage';
 import HomePage from './pages/HomePage';
+import Ham10000LabPage from './pages/Ham10000LabPage';
 import ModelDetailPage from './pages/ModelDetailPage';
 import ModelsPage from './pages/ModelsPage';
+import ContructionPerform from './ContructionPerform';
 import { navigation } from './data';
 
 function SiteLayout() {
@@ -50,7 +52,9 @@ function App() {
         <Route path="models/:modelId" element={<ModelDetailPage />} />
         <Route path="datasets" element={<DatasetsPage />} />
         <Route path="datasets/:datasetId" element={<DatasetDetailPage />} />
+        <Route path="ham10000" element={<Ham10000LabPage />} />
         <Route path="about" element={<AboutPage />} />
+        <Route path="predict" element={<ContructionPerform />} />
         
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>

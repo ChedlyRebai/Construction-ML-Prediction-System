@@ -1,0 +1,105 @@
+{
+  "frontend\\src\\App.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\ContructionPerform.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react"
+    ]
+  },
+  "frontend\\src\\data.ts": {
+    "purpose": "unknown",
+    "exports": [
+      "models",
+      "datasets",
+      "navigation"
+    ],
+    "imports": []
+  },
+  "frontend\\src\\main.tsx": {
+    "purpose": "component",
+    "exports": [],
+    "imports": [
+      "react",
+      "react-dom/client",
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\pages\\AboutPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": []
+  },
+  "frontend\\src\\pages\\DatasetDetailPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\pages\\DatasetsPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\pages\\HomePage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\pages\\ModelDetailPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\pages\\ModelsPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react-router-dom"
+    ]
+  },
+  "frontend\\src\\vite-env.d.ts": {
+    "purpose": "unknown",
+    "exports": [],
+    "imports": []
+  },
+  "frontend\\vite.config.ts": {
+    "purpose": "unknown",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "vite",
+      "@vitejs/plugin-react"
+    ]
+  }
+}

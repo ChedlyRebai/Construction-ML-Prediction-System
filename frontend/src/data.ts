@@ -74,6 +74,8 @@ export const datasets: DatasetInfo[] = [
 
 export const navigation = [
   { label: 'Home', href: '/' },
+  { label: 'Predict', href: '/predict' },
+  { label: 'HAM10000 Lab', href: '/ham10000' },
   { label: 'Models', href: '/models' },
   { label: 'Datasets', href: '/datasets' },
   { label: 'About', href: '/about' },
