@@ -220,6 +220,15 @@ def predict_one(model_key: str, X_raw, X_scaled) -> dict:
         "all_probabilities": all_probs,
     }
 
+# ── Dataset path (pour les endpoints summary/sample) ──────────────────────
+PROJECT_ROOT = os.path.dirname(os.path.dirname(__file__))
+DATASET_PATH = os.path.join(PROJECT_ROOT, "HAM10000_metadata.csv")
+
+def load_dataset() -> pd.DataFrame:
+    if not os.path.exists(DATASET_PATH):
+        raise HTTPException(status_code=404, detail="HAM10000_metadata.csv introuvable")
+    return pd.read_csv(DATASET_PATH)
+
 # ── Endpoints ──────────────────────────────────────════════════════════════
 @app.get("/")
 def root():
@@ -241,6 +250,31 @@ def metadata():
         "classes":             CLASS_INFO,
         "class_names":         CLASS_NAMES,
         "models":              ["xgboost", "random_forest", "svm"],
+    }
+
+@app.get("/dataset-summary")
+def dataset_summary():
+    df = load_dataset()
+    class_distribution = {}
+    if "dx" in df.columns:
+        counts = df["dx"].value_counts(dropna=False)
+        class_distribution = {str(k): int(v) for k, v in counts.items()}
+    return {
+        "file": "HAM10000_metadata.csv",
+        "rows": int(df.shape[0]),
+        "columns": df.columns.tolist(),
+        "missing_values": {col: int(val) for col, val in df.isna().sum().to_dict().items()},
+        "class_distribution": class_distribution,
+    }
+
+@app.get("/dataset-sample")
+def dataset_sample(limit: int = 10):
+    df = load_dataset()
+    bounded_limit = min(max(limit, 1), 50)
+    sample = df.head(bounded_limit).where(pd.notnull(df.head(bounded_limit)), None)
+    return {
+        "limit": bounded_limit,
+        "rows": sample.to_dict(orient="records"),
     }
 
 @app.post("/predict", response_model=PredictionResponse)
