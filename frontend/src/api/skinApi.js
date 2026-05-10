@@ -6,7 +6,7 @@
 const rawBase =
   import.meta.env.VITE_HAM_API_URL ||
   import.meta.env.VITE_API_URL ||
-  'http://localhost:8000';
+  'https://safety-skin-api.onrender.com/';
 
 const BASE = rawBase.endsWith('/') ? rawBase.slice(0, -1) : rawBase;
 
