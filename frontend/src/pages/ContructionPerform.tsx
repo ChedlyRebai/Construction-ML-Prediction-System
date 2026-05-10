@@ -1,7 +1,5 @@
-import { FormEvent, useMemo, useState } from 'react';
-import './styles.css';
-
-import './App.css'
+import { FormEvent, useEffect, useMemo, useState } from 'react';
+import '../styles.css';
 
 type PredictionResponse = {
   prediction: string;
@@ -30,6 +28,7 @@ type FormState = {
   update_frequency: string;
   optimization_suggestion: string;
 };
+
 
 const DEFAULT_API_BASE_URL = 'http://localhost:5000';
 
