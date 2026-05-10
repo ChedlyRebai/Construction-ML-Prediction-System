@@ -1,4 +1,7 @@
 import { FormEvent, useMemo, useState } from 'react';
+import './styles.css';
+
+import './App.css'
 
 type PredictionResponse = {
   prediction: string;

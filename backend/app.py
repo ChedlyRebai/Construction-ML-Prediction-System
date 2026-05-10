@@ -51,7 +51,14 @@ NUMERIC_FIELDS = [field for field in REQUIRED_FIELDS if field != CATEGORICAL_COL
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=[
+    "http://localhost:5173",
+    "http://localhost:4173",
+    # Vercel deployments — update with your actual domain
+    "https://building-ml.vercel.app",
+    # Allow all Vercel preview URLs
+    r"https://.*\.vercel\.app",
+])
 
 
 def _train_bundle() -> tuple[XGBClassifier, Dict[str, Any]]:
