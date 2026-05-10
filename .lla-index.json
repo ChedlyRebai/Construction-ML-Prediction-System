@@ -101,5 +101,14 @@
       "vite",
       "@vitejs/plugin-react"
     ]
+  },
+  "frontend\\src\\pages\\Ham10000LabPage.tsx": {
+    "purpose": "component",
+    "exports": [
+      "default"
+    ],
+    "imports": [
+      "react"
+    ]
   }
 }
