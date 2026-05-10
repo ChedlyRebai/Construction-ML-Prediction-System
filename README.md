@@ -99,6 +99,18 @@ Important notes:
 - Free Render web services can sleep when idle, so the first request after inactivity may be slower.
 - The frontend in this repo is separate. If you only want the backend online, deploy just the API service.
 
+## Vercel Frontend Deployment
+
+This repository also includes a `vercel.json` file for Vercel.
+
+1. Create a Vercel project from this repository.
+2. Keep the root directory at the repository root.
+3. Vercel will install and build the frontend from `frontend/`.
+4. The production output is published from `frontend/dist`.
+5. Deploy the project and use the Vercel URL as the public frontend.
+
+If you want to keep the frontend and backend separated, use Render for the API and Vercel for the React app.
+
 ## Notes
 
 - The model files are stored in `backend/artifacts/`.
