@@ -82,6 +82,7 @@ class SafetyDetector:
             image,
             conf=self.conf_threshold,
             iou=self.iou_threshold,
+            imgsz=416,
             verbose=False
         )
         
@@ -271,6 +272,12 @@ class SafetyDetector:
         """
         # Charger l'image
         image = Image.open(io.BytesIO(image_bytes))
+        
+        # Redimensionner si trop grande pour accélérer la prédiction
+        max_size = 640
+        if max(image.size) > max_size:
+            image.thumbnail((max_size, max_size), Image.LANCZOS)
+        
         image_np = np.array(image)
         
         # Convertir RGB -> BGR pour OpenCV
@@ -297,7 +304,7 @@ class SafetyDetector:
         
         # Convertir en base64
         buffer = io.BytesIO()
-        annotated_pil.save(buffer, format='JPEG', quality=95)
+        annotated_pil.save(buffer, format='JPEG', quality=75)
         annotated_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
         
         return {
